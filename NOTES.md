@@ -2,34 +2,39 @@
 
 ## Context
 - Working name: Nomoney2-Cam (the repository name). A distinct product name and brand are required before any public release.
-- The repository is empty: no files, commits, branch contents, stack, or GitHub Actions runs exist yet.
-- The target is an Android camera experience informed by its public Play listing and the user-supplied technical summary. Rebuild feature concepts only; do not place the original app name, branding, copy, assets, or proprietary filter data in this repository.
-- Because the repository is empty and the requested glass library is browser-based, the app will use a web UI wrapped with Capacitor for Android.
+- The repository started empty; it now has a main branch and this project plan. No existing app stack or workflow was present.
+- The Android camera experience is guided by public listing features and the high-level user-supplied summary. The repository must not contain original branding, copy, assets, or proprietary filter data.
+- The selected stack is a web UI wrapped with Capacitor for Android because the repository was empty and liquid-glass-js is browser-based.
 
 ## Done
-- Inspected the GitHub repository and confirmed it has no existing stack or CI to preserve.
-- Read the public Play listing and the liquid-glass-js README; checked the official Ponytail full-mode instructions.
-- ✅ Inspected the empty repository and recorded the initial stack and scope decisions.
+- Inspected the empty repository; created initial NOTES.md and pushed commit 3c109e3da90695967761dca8ce542eb87d41c104.
+- Wrote docs/recon.md from the public listing/review information and installed the upstream Ponytail project instructions.
+- ✅ Classified the feature scope and installed Ponytail before app implementation.
 
 ## Next steps (ordered)
-1. Write `docs/recon.md`, classifying feature candidates as must, should, or could from the public listing and screenshots; use the supplied technical summary only as a high-level cross-check. Install the official Ponytail project instructions before app code.
-2. Scaffold the web app and Capacitor Android project, then verify a local/CI build.
-3. Add the push-triggered debug-APK GitHub Actions workflow (JDK 17, Node LTS, web build, Capacitor sync, Gradle assembleDebug, artifact upload; no signing or secrets) and verify the run.
-4. Add camera preview and photo capture.
-5. Add the app shell with liquid-glass controls, following the library README API exactly.
-6. Implement each must-have from `docs/recon.md` in its own pushed commit, rewriting this file after every step.
+1. Scaffold the web app and Capacitor Android project; verify it builds.
+2. Add the push-triggered debug-APK GitHub Actions workflow (JDK 17, Node LTS, web build, Capacitor sync, Gradle assembleDebug, artifact upload; no signing or secrets) and verify the run with gh run watch.
+3. Add live camera preview, still capture, and local save.
+4. Add the app shell with liquid-glass controls, following the library README API exactly.
+5. Implement the must-have original analog-look treatment in one commit.
+6. Implement the must-have two-exposure double exposure in one commit.
+7. Reassess remaining should/could items from docs/recon.md without expanding scope or adding unapproved dependencies.
 
 ## Could be better
-- There is no app scaffold, build setup, test harness, or CI; all must be introduced within the requested steps.
-- No Actions run can be checked until the workflow exists in step 3.
+- The public listing extraction exposed review text but not the screenshot image contents, so visual layout details still need direct inspection before UI styling.
+- Public reviews mention camera startup and look-availability reliability issues; local persistence and graceful camera errors should be verified during implementation.
+- Purchase pricing, restore semantics, and exact catalog behavior are unspecified and remain out of scope for real billing.
+- No workflow run exists yet; CI evidence becomes available only after the workflow is added.
 
 ## Decisions
-- Use a web UI plus Capacitor Android because the repository is empty and liquid-glass-js is a browser library.
-- Use only the repository name as a temporary working name; choose fresh branding before public release.
-- Keep all implementation original: no reference-app name, copy, logo, icon, image, filter/LUT data, or other original asset.
-- Apply Ponytail at full level for all code. Its official instructions have been read; the project-level instruction file will be added before any app implementation.
-- Do not add dependencies beyond Capacitor and requirements documented for liquid-glass-js without asking.
+- Use a web UI plus Capacitor Android; no existing stack existed.
+- Use only the repository name as a temporary working name; rebrand before any public release.
+- Keep the implementation original: no target app name, copy, branding, icons, images, filter/LUT data, model files, or other original assets.
+- Apply Ponytail at full level for all code. Its official instructions are installed in AGENTS.md from https://github.com/DietrichGebert/ponytail (MIT).
+- Use liquid-glass-js according to its README; do not guess its API.
+- Do not add dependencies beyond Capacitor and documented liquid-glass-js requirements without asking.
+- No live payments, paid service, signing key, or secret is in scope.
 
 ## Open questions
-- Final product name and branding remain open; they must be decided before any public release.
-- No decisions block steps 2–4.
+- Final product name and branding are open; decide before any public release.
+- No decision blocks scaffolding or CI.
